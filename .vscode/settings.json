@@ -1,0 +1,8 @@
+{
+  "luau-lsp.types.definitionFiles": [
+    "env/index.d.luau",
+  ],
+  // "luau-lsp.types.documentationFiles": [
+  //   "env/index-en.json",
+  // ]
+}

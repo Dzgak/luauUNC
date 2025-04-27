@@ -1,0 +1,1714 @@
+{
+    "@executor/filesystem/readfile": {
+        "documentation": "Reads the entire contents of the file at the given path in the executor’s workspace.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The path to the file to read."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "The file’s contents."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "local contents = readfile(\"data/config.json\")"
+    },
+    "@executor/filesystem/listfiles": {
+        "documentation": "Lists all files and folders in the specified directory.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The directory path to enumerate."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{string}",
+                "documentation": "An array of file and folder names."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "for _, name in ipairs(listfiles(\"data/\")) do print(name) end"
+    },
+    "@executor/filesystem/writefile": {
+        "documentation": "Writes the given string data to a file, overwriting if it exists.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The path to the file to write."
+            },
+            {
+                "name": "data",
+                "documentation": "The string data to write."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "writefile(\"data/log.txt\", \"Hello World\")"
+    },
+    "@executor/filesystem/makefolder": {
+        "documentation": "Creates a new folder at the specified path (recursively).",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The folder path to create."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "makefolder(\"data/backups/\")"
+    },
+    "@executor/filesystem/appendfile": {
+        "documentation": "Appends the given string data to the end of an existing file.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The file to append to."
+            },
+            {
+                "name": "data",
+                "documentation": "The string data to append."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "appendfile(\"data/log.txt\", \"New entry\\n\")"
+    },
+    "@executor/filesystem/isfile": {
+        "documentation": "Checks whether the given path refers to a file.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The path to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": "True if the path is a file; false otherwise."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "if isfile(\"data/log.txt\") then print(\"Exists\") end"
+    },
+    "@executor/filesystem/isfolder": {
+        "documentation": "Checks whether the given path refers to a folder.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The path to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": "True if the path is a folder; false otherwise."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "if isfolder(\"data/\") then print(\"Directory exists\") end"
+    },
+    "@executor/filesystem/delfile": {
+        "documentation": "Deletes the specified file.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The file path to delete."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "delfile(\"data/old.txt\")"
+    },
+    "@executor/filesystem/delfolder": {
+        "documentation": "Deletes the specified folder and all its contents.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The folder path to delete."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "delfolder(\"data/backups/\")"
+    },
+    "@executor/filesystem/loadfile": {
+        "documentation": "Loads a Luau file as a chunk (function).",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The script file path."
+            },
+            {
+                "name": "chunkname",
+                "documentation": "(Optional) The name to assign to the chunk."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function?",
+                "documentation": "The loaded function, or nil on error."
+            },
+            {
+                "type": "string?",
+                "documentation": "Error message if loading failed."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "local fn, err = loadfile(\"init.lua\")\nif fn then fn() end"
+    },
+    "@executor/filesystem/dofile": {
+        "documentation": "Executes the Luau file at the given path immediately.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "The script file path."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "dofile(\"setup.lua\")"
+    },
+    "@executor/input/isrbxactive": {
+        "documentation": "Returns true if the Roblox window is currently focused.",
+        "params": [],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": "Whether the game window is active."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "if isrbxactive() then print(\"Focused\") end"
+    },
+    "@executor/input/mouse1click": {
+        "documentation": "Simulates a left‐mouse button click.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse1click()"
+    },
+    "@executor/input/mouse1press": {
+        "documentation": "Simulates pressing down the left mouse button.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse1press()"
+    },
+    "@executor/input/mouse1release": {
+        "documentation": "Simulates releasing the left mouse button.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse1release()"
+    },
+    "@executor/input/mouse2click": {
+        "documentation": "Simulates a right‐mouse button click.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse2click()"
+    },
+    "@executor/input/mouse2press": {
+        "documentation": "Simulates pressing down the right mouse button.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse2press()"
+    },
+    "@executor/input/mouse2release": {
+        "documentation": "Simulates releasing the right mouse button.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mouse2release()"
+    },
+    "@executor/input/mousemoveabs": {
+        "documentation": "Moves the mouse cursor to the absolute (x, y) screen position.",
+        "params": [
+            {
+                "name": "x",
+                "documentation": "The target X coordinate."
+            },
+            {
+                "name": "y",
+                "documentation": "The target Y coordinate."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mousemoveabs(400, 300)"
+    },
+    "@executor/input/mousemoverel": {
+        "documentation": "Moves the mouse cursor by a relative offset.",
+        "params": [
+            {
+                "name": "x",
+                "documentation": "Delta X."
+            },
+            {
+                "name": "y",
+                "documentation": "Delta Y."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mousemoverel(10, 0)"
+    },
+    "@executor/input/mousescroll": {
+        "documentation": "Scrolls the mouse wheel by the given number of pixels.",
+        "params": [
+            {
+                "name": "pixels",
+                "documentation": "Scroll amount (positive or negative)."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "mousescroll(-120)"
+    },
+    "@executor/drawing/Drawing.new": {
+        "documentation": "Creates a new Drawing object of the specified type.",
+        "params": [
+            {
+                "name": "type",
+                "documentation": "One of \"Line\", \"Text\", \"Image\", \"Circle\", \"Square\", \"Quad\", \"Triangle\"."
+            }
+        ],
+        "returns": [
+            {
+                "type": "Drawing",
+                "documentation": "The new drawing instance."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "local circle = Drawing.new(\"Circle\")"
+    },
+    "@executor/drawing/Drawing.Fonts": {
+        "documentation": "Enumeration of available fonts for text drawings.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/drawing/Destroy": {
+        "documentation": "Destroys this Drawing instance.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "circle:Destroy()"
+    },
+    "@executor/drawing/cleardrawcache": {
+        "documentation": "Removes all Drawing objects from the screen.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "cleardrawcache()"
+    },
+    "@executor/drawing/getrenderproperty": {
+        "documentation": "Retrieves a rendering property from a Drawing object.",
+        "params": [
+            {
+                "name": "drawing",
+                "documentation": "The Drawing instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The property name to get."
+            }
+        ],
+        "returns": [
+            {
+                "type": "any",
+                "documentation": "The current value of the property."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "print(getrenderproperty(circle, \"Radius\"))"
+    },
+    "@executor/drawing/isrenderobj": {
+        "documentation": "Checks if the given object is a Drawing instance.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "Any value."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": "True if it’s a Drawing, otherwise false."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "print(isrenderobj(circle))"
+    },
+    "@executor/drawing/setrenderproperty": {
+        "documentation": "Sets a rendering property on a Drawing object.",
+        "params": [
+            {
+                "name": "drawing",
+                "documentation": "The Drawing instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The property name to set."
+            },
+            {
+                "name": "value",
+                "documentation": "The new property value."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": "setrenderproperty(circle, \"Color\", Color3.new(1,0,0))"
+    },
+    "@executor/metatable/getrawmetatable": {
+        "documentation": "Gets the underlying metatable of a table, bypassing read‐only locks.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The target table."
+            }
+        ],
+        "returns": [
+            {
+                "type": "table",
+                "documentation": "The raw metatable."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "local mt = getrawmetatable(win)"
+    },
+    "@executor/metatable/hookmetamethod": {
+        "documentation": "Hooks a metamethod (e.g. __index) on an object.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The target to hook."
+            },
+            {
+                "name": "method",
+                "documentation": "The metamethod name."
+            },
+            {
+                "name": "hook",
+                "documentation": "Your hook function."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function",
+                "documentation": "The original metamethod."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": "hookmetamethod(obj, \"__index\", myIndexHook)"
+    },
+    "@executor/metatable/getnamecallmethod": {
+        "documentation": "Returns the current namecall method for __namecall hooks.",
+        "params": [],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/metatable/isreadonly": {
+        "documentation": "Checks if a table is locked read‐only.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The table to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/metatable/setrawmetatable": {
+        "documentation": "Replaces the metatable of a table, ignoring locks.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The table to modify."
+            },
+            {
+                "name": "metatable",
+                "documentation": "The new metatable."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/metatable/setreadonly": {
+        "documentation": "Marks a table as read‐only or writable.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The table to modify."
+            },
+            {
+                "name": "readonly",
+                "documentation": "True to lock, false to unlock."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/fireclickdetector": {
+        "documentation": "Fires the specified ClickDetector event on an object.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The ClickDetector instance."
+            },
+            {
+                "name": "distance",
+                "documentation": "(Optional) Max distance to fire from."
+            },
+            {
+                "name": "event",
+                "documentation": "(Optional) The event name, e.g. \"MouseClick\"."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/getcallbackvalue": {
+        "documentation": "Retrieves the function assigned to an Instance callback property.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance to inspect."
+            },
+            {
+                "name": "property",
+                "documentation": "The callback property name."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function?",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/getconnections": {
+        "documentation": "Returns all event connections for the given RBXScriptSignal.",
+        "params": [
+            {
+                "name": "signal",
+                "documentation": "The signal to query."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{Connection}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/getcustomasset": {
+        "documentation": "Converts a local file path into an rbxasset:// URL, optionally bypassing the cache.",
+        "params": [
+            {
+                "name": "path",
+                "documentation": "Local file path."
+            },
+            {
+                "name": "noCache",
+                "documentation": "True to ignore cached assets."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "The rbxasset URL."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/gethiddenproperty": {
+        "documentation": "Reads a hidden property from an Instance.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The hidden property name."
+            }
+        ],
+        "returns": [
+            {
+                "type": "any",
+                "documentation": "The property value."
+            },
+            {
+                "type": "boolean",
+                "documentation": "True if successful."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/gethui": {
+        "documentation": "Returns the hidden GUI container (CoreGui) for drawing and overlays.",
+        "params": [],
+        "returns": [
+            {
+                "type": "Folder",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/getinstances": {
+        "documentation": "Lists all Instances currently loaded in the client.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{Instance}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/getnilinstances": {
+        "documentation": "Lists Instances not parented under any Service.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{Instance}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/isscriptable": {
+        "documentation": "Checks if the given property on an Instance can be scripted.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The property name."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/sethiddenproperty": {
+        "documentation": "Writes to a hidden property on an Instance.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The hidden property."
+            },
+            {
+                "name": "value",
+                "documentation": "The new value."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": "True if successful."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/setrbxclipboard": {
+        "documentation": "Copies a model XML to the Studio clipboard for pasting.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "The XML string."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/instances/setscriptable": {
+        "documentation": "Toggles scriptability of a property on an Instance.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            },
+            {
+                "name": "property",
+                "documentation": "The property name."
+            },
+            {
+                "name": "value",
+                "documentation": "True to allow scripting."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/cache/cache.invalidate": {
+        "documentation": "Invalidates any cached reference to this Instance.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance to invalidate."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/cache/cache.iscached": {
+        "documentation": "Checks if an Instance reference is cached.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/cache/cache.replace": {
+        "documentation": "Replaces the cached Instance with a new one.",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The old Instance."
+            },
+            {
+                "name": "newObject",
+                "documentation": "The replacement Instance."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/cache/cloneref": {
+        "documentation": "Creates a fresh reference to an Instance (uncached).",
+        "params": [
+            {
+                "name": "object",
+                "documentation": "The Instance."
+            }
+        ],
+        "returns": [
+            {
+                "type": "Instance",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/cache/compareinstances": {
+        "documentation": "Checks if two Instances refer to the same object.",
+        "params": [
+            {
+                "name": "a",
+                "documentation": "First Instance."
+            },
+            {
+                "name": "b",
+                "documentation": "Second Instance."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/checkcaller": {
+        "documentation": "Returns true if the calling function is in the executor context.",
+        "params": [],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/clonefunction": {
+        "documentation": "Creates a deep clone of a Luau function.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The function to clone."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/getcallingscript": {
+        "documentation": "Returns the BaseScript object of the currently executing script.",
+        "params": [],
+        "returns": [
+            {
+                "type": "BaseScript",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/hookfunction": {
+        "documentation": "Replaces a function with a hook, returning the original.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The target function."
+            },
+            {
+                "name": "hook",
+                "documentation": "Your hooking function."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/iscclosure": {
+        "documentation": "Checks if a function is a built-in C closure.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The function to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/islclosure": {
+        "documentation": "Checks if a function is a Luau closure.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The function to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/isexecutorclosure": {
+        "documentation": "Checks if a function originated from the executor context.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The function to test."
+            }
+        ],
+        "returns": [
+            {
+                "type": "boolean",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/loadstring": {
+        "documentation": "Compiles a Luau source string into a function chunk.",
+        "params": [
+            {
+                "name": "source",
+                "documentation": "Source code to compile."
+            },
+            {
+                "name": "chunkname",
+                "documentation": "Optional name for the chunk."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function?",
+                "documentation": "Compiled function or nil on error."
+            },
+            {
+                "type": "string?",
+                "documentation": "Error message if compilation failed."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/closures/newcclosure": {
+        "documentation": "Wraps a Luau function as a C closure.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "The function to wrap."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/base64encode": {
+        "documentation": "Encodes the input string to Base64.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "The data to encode."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Base64 result."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/base64decode": {
+        "documentation": "Decodes a Base64-encoded string.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Base64 text."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Decoded data."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/encrypt": {
+        "documentation": "Encrypts data with AES using the given key and IV.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Plaintext."
+            },
+            {
+                "name": "key",
+                "documentation": "Encryption key."
+            },
+            {
+                "name": "iv",
+                "documentation": "(Optional) Initialization vector."
+            },
+            {
+                "name": "mode",
+                "documentation": "(Optional) Cipher mode, e.g. \"CBC\"."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Ciphertext."
+            },
+            {
+                "type": "string",
+                "documentation": "Used IV."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/decrypt": {
+        "documentation": "Decrypts AES ciphertext with the given key and IV.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Ciphertext."
+            },
+            {
+                "name": "key",
+                "documentation": "Decryption key."
+            },
+            {
+                "name": "iv",
+                "documentation": "Initialization vector."
+            },
+            {
+                "name": "mode",
+                "documentation": "Cipher mode."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Decrypted plaintext."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/generatebytes": {
+        "documentation": "Generates cryptographically strong random bytes.",
+        "params": [
+            {
+                "name": "size",
+                "documentation": "Number of bytes to generate."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Raw byte string."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/generatekey": {
+        "documentation": "Generates a random 256-bit AES key.",
+        "params": [],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "256-bit key."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/crypt/hash": {
+        "documentation": "Computes a hash of the data using the specified algorithm.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Input data."
+            },
+            {
+                "name": "algorithm",
+                "documentation": "Hash algorithm, e.g. \"SHA384\"."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": "Hexadecimal hash."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getconstant": {
+        "documentation": "Retrieves a constant from a function’s bytecode.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or proto index."
+            },
+            {
+                "name": "index",
+                "documentation": "Constant index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "any",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getconstants": {
+        "documentation": "Retrieves all constants from a function’s bytecode.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or proto index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getinfo": {
+        "documentation": "Returns metadata about a function or stack level.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or level index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "DebugInfo",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getproto": {
+        "documentation": "Gets a child proto (nested function) of a function by index.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            },
+            {
+                "name": "index",
+                "documentation": "Proto index."
+            },
+            {
+                "name": "active",
+                "documentation": "(Optional) If true, returns only active closures."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function|{function}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getprotos": {
+        "documentation": "Returns all child protos of a function.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{function}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getstack": {
+        "documentation": "Fetches values from the call stack.",
+        "params": [
+            {
+                "name": "level",
+                "documentation": "Stack level to inspect."
+            },
+            {
+                "name": "index",
+                "documentation": "(Optional) Count of values."
+            }
+        ],
+        "returns": [
+            {
+                "type": "any|{any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getupvalue": {
+        "documentation": "Gets a single upvalue by index from a function.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            },
+            {
+                "name": "index",
+                "documentation": "Upvalue index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "any",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/getupvalues": {
+        "documentation": "Gets all upvalues from a function.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/setconstant": {
+        "documentation": "Overwrites a constant in a function’s bytecode.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            },
+            {
+                "name": "index",
+                "documentation": "Constant index."
+            },
+            {
+                "name": "value",
+                "documentation": "New constant value."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/setstack": {
+        "documentation": "Sets a value in the Lua stack at the given level and index.",
+        "params": [
+            {
+                "name": "level",
+                "documentation": "Stack level."
+            },
+            {
+                "name": "index",
+                "documentation": "Stack index."
+            },
+            {
+                "name": "value",
+                "documentation": "Value to set."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/debug/setupvalue": {
+        "documentation": "Sets an upvalue for a function.",
+        "params": [
+            {
+                "name": "func",
+                "documentation": "Function or index."
+            },
+            {
+                "name": "index",
+                "documentation": "Upvalue index."
+            },
+            {
+                "name": "value",
+                "documentation": "New upvalue."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsoleclear": {
+        "documentation": "Clears all text from the executor console.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsolecreate": {
+        "documentation": "Opens the executor console window.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsoledestroy": {
+        "documentation": "Closes the executor console window.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsoleinput": {
+        "documentation": "Blocks until the user types input into the console.",
+        "params": [],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsoleprint": {
+        "documentation": "Prints text to the executor console.",
+        "params": [
+            {
+                "name": "text",
+                "documentation": "Text to print."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/console/rconsolesettitle": {
+        "documentation": "Sets the title bar text of the executor console.",
+        "params": [
+            {
+                "name": "title",
+                "documentation": "The new title."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/identifyexecutor": {
+        "documentation": "Returns the name and version of the current executor.",
+        "params": [],
+        "returns": [
+            {
+                "type": "tuple<string,string>",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/lz4compress": {
+        "documentation": "Compresses a string using LZ4.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Input string."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/lz4decompress": {
+        "documentation": "Decompresses LZ4 data.",
+        "params": [
+            {
+                "name": "data",
+                "documentation": "Compressed data."
+            },
+            {
+                "name": "size",
+                "documentation": "Original size."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/messagebox": {
+        "documentation": "Displays a message box and returns the user’s button choice.",
+        "params": [
+            {
+                "name": "text",
+                "documentation": "Message text."
+            },
+            {
+                "name": "caption",
+                "documentation": "Window title."
+            },
+            {
+                "name": "flags",
+                "documentation": "Button configuration flags."
+            }
+        ],
+        "returns": [
+            {
+                "type": "number",
+                "documentation": "User’s choice."
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/queue_on_teleport": {
+        "documentation": "Queues a snippet of code to run after the player teleports.",
+        "params": [
+            {
+                "name": "code",
+                "documentation": "Luau code string."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/request": {
+        "documentation": "Sends an HTTP request and returns the response.",
+        "params": [
+            {
+                "name": "options",
+                "documentation": "Request options table."
+            }
+        ],
+        "returns": [
+            {
+                "type": "HttpResponse",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/setclipboard": {
+        "documentation": "Writes text to the system clipboard.",
+        "params": [
+            {
+                "name": "text",
+                "documentation": "Text to copy."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/misc/setfpscap": {
+        "documentation": "Limits the game’s frame rate to the specified value.",
+        "params": [
+            {
+                "name": "fps",
+                "documentation": "Max frames per second."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/websocket/WebSocket.connect": {
+        "documentation": "Establishes a WebSocket connection to the given URL.",
+        "params": [
+            {
+                "name": "url",
+                "documentation": "The WebSocket server URL."
+            }
+        ],
+        "returns": [
+            {
+                "type": "WebSocket",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/websocket/WebSocket:Send": {
+        "documentation": "Sends a message over the WebSocket.",
+        "params": [
+            {
+                "name": "message",
+                "documentation": "String to send."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/websocket/WebSocket:Close": {
+        "documentation": "Closes the WebSocket connection.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/websocket/WebSocket.OnMessage": {
+        "documentation": "Event fired when a message arrives.",
+        "params": [
+            {
+                "name": "message",
+                "documentation": "The received message."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/websocket/WebSocket.OnClose": {
+        "documentation": "Event fired when the connection closes.",
+        "params": [],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getgc": {
+        "documentation": "Returns all objects in the garbage collector.",
+        "params": [
+            {
+                "name": "includeTables",
+                "documentation": "(Optional) Include tables in the result."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{function|userdata|table}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getgenv": {
+        "documentation": "Returns the executor’s global environment table.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{[string]: any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getloadedmodules": {
+        "documentation": "Lists all ModuleScripts loaded in the client.",
+        "params": [
+            {
+                "name": "excludeCore",
+                "documentation": "(Optional) Skip core modules."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{ModuleScript}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getrenv": {
+        "documentation": "Returns the game client’s raw environment table.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{[string]: any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getrunningscripts": {
+        "documentation": "Lists all currently running LocalScripts and ModuleScripts.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{LocalScript|ModuleScript}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getscriptbytecode": {
+        "documentation": "Returns the compiled bytecode of a script.",
+        "params": [
+            {
+                "name": "script",
+                "documentation": "The LocalScript or ModuleScript."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getscriptclosure": {
+        "documentation": "Creates a function closure from a script.",
+        "params": [
+            {
+                "name": "script",
+                "documentation": "The script to close."
+            }
+        ],
+        "returns": [
+            {
+                "type": "function",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getscripthash": {
+        "documentation": "Computes a SHA384 hash of a script’s bytecode.",
+        "params": [
+            {
+                "name": "script",
+                "documentation": "The script."
+            }
+        ],
+        "returns": [
+            {
+                "type": "string",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getscripts": {
+        "documentation": "Lists all scripts (LocalScript and ModuleScript) in the game.",
+        "params": [],
+        "returns": [
+            {
+                "type": "{LocalScript|ModuleScript}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getsenv": {
+        "documentation": "Returns the environment table of a script.",
+        "params": [
+            {
+                "name": "script",
+                "documentation": "The script."
+            }
+        ],
+        "returns": [
+            {
+                "type": "{[string]: any}",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/getthreadidentity": {
+        "documentation": "Returns the current thread identity (0 = Roblox, 1 = game, 2 = script).",
+        "params": [],
+        "returns": [
+            {
+                "type": "number",
+                "documentation": ""
+            }
+        ],
+        "learn_more_link": "",
+        "code_sample": ""
+    },
+    "@executor/scripts/setthreadidentity": {
+        "documentation": "Sets the current thread identity.",
+        "params": [
+            {
+                "name": "identity",
+                "documentation": "The identity to use."
+            }
+        ],
+        "returns": [],
+        "learn_more_link": "",
+        "code_sample": ""
+    }
+}

@@ -1,0 +1,1 @@
+readfile("path/to/file")
