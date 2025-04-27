@@ -1,0 +1,4 @@
+[submodule "env/docs"]
+	path = env/docs
+	url = https://github.com/unified-naming-convention/NamingStandard.git
+	branch = main
